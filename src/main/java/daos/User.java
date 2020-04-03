@@ -1,6 +1,6 @@
 package daos;
 
-public class User {
+public class User implements DTO {
     private static int counter = 0;
     private Integer id;
     private String first_name;
@@ -23,7 +23,7 @@ public class User {
     }
 
     public User(Integer id, String first_name, String last_name, String email, String gender, String city) {
-        this.id = ++counter;
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -74,6 +74,18 @@ public class User {
 
     public Integer getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email=" + email +
+                ", gender=" + gender +
+                ", city=" + city +
+                '}';
     }
 
 
